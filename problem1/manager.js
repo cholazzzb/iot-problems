@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 import fetch from "node-fetch";
 
 export const getUsers = async () => {
@@ -33,10 +34,14 @@ export const getCurrencyRatio = async (fromCurrency, toCurrency) => {
 
 export const getMergedSalary = async () => {
   let salary_data;
-  fs.readFile("./salary_data.json", "utf-8", (err, jsonString) => {
-    const salary_data_object = JSON.parse(jsonString);
-    salary_data = salary_data_object.array;
-  });
+  fs.readFile(
+    path.join(process.cwd(), "/problem1/salary_data.json"),
+    "utf-8",
+    (err, jsonString) => {
+      const salary_data_object = JSON.parse(jsonString);
+      salary_data = salary_data_object.array;
+    }
+  );
   const ratio = await getCurrencyRatio("IDR", "USD");
   const users = await getUsers();
 

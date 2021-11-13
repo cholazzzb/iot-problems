@@ -1,9 +1,11 @@
 {
-  "name": "problem1",
+  "name": "iot-problems",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node problem1.js"
+    "problem1": "node ./problem1/problem1.js",
+    "problem2": "node ./problem2/problem2.js",
+    "problem3": "node ./problem3/problem3.js"
   },
   "license": "MIT",
   "dependencies": {
