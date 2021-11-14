@@ -5,13 +5,19 @@
   "scripts": {
     "problem1": "node ./problem1/problem1.js",
     "problem2": "node ./problem2/problem2.js",
-    "problem3": "node ./problem3/problem3.js"
+    "problem31": "node ./problem3/problem31.js",
+    "problem32": "node ./problem3/problem32.js",
+    "problem3setup": "node ./problem3/mqtt/broker.js",
+    "problem3publisher": "node ./problem3/mqtt/publisher.js",
+    "problem3subscriber": "node ./problem3/mqtt/subscriber.js"
   },
   "license": "MIT",
   "dependencies": {
+    "aedes": "^0.46.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "http-status-codes": "^2.1.4",
+    "mqtt": "^4.2.8",
     "node-fetch": "^3.1.0"
   }
 }
