@@ -20,6 +20,9 @@
 1. Publisher: yarn problem3publisher
 2.
 
+- testing: yarn test
+- testing with coverage: yarn testCoverage
+
 # USING:
 
 NODE.js v14.18.1
