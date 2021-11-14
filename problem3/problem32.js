@@ -10,6 +10,7 @@ const TIME_INTERVAL = 15; // minutes
 setInterval(() => {
   try {
     console.log(`TIME: ${new Date()}`);
+    const globalAvgFinder = new AverageFinder();
     topics.forEach((topic) => {
       var data = fs
         .readFileSync(
@@ -33,12 +34,14 @@ setInterval(() => {
         max = data > max ? data : max;
         medianFinder.addNum(data);
         averageFinder.addNum(data);
+        globalAvgFinder.addNum(data);
       }
       console.log(
         `${topic}, Min: ${min}, Max: ${max}, Median: ${medianFinder.findMedian()}, Avg: ${averageFinder.findAverage()}`
       );
     });
-    console.log("")
+    console.log(`Global Average: ${globalAvgFinder.findAverage()}`);
+    console.log("");
   } catch (e) {
     console.log("Error:", e.stack);
   }
